@@ -43,6 +43,7 @@ class MainContent extends StatelessWidget {
       child: Column(
         children: [
           //contents
+          
         ],
       ),
     );
