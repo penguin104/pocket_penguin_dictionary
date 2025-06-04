@@ -16,7 +16,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           child: Text(
             "ポケットペンギン図鑑",
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 25,),
           ),
         ),
         leading: IconButton(
@@ -25,8 +25,8 @@ class _HomeWidgetState extends State<HomeWidget> {
           },
           icon: Icon(Icons.list, size: 50),
         ),
-        backgroundColor: Colors.grey[700],
-        foregroundColor: Colors.white,
+        backgroundColor: Colors.lightBlue[200],
+        foregroundColor: Colors.blue[900],
         toolbarHeight: 100,
       ),
       body: MainContent(),
