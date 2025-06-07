@@ -1,27 +1,40 @@
 import 'dart:convert';
 
 class PenguinModel {
-  final int id;
-  final String name;
-  final double height;
-  final double weight;
-  final String distribution;
-  final String details;
-  final List<String> images;
+  int id;
+  String penguin;
+  String scientificName;
+  double height;
+  double weight;
+  String distribution;
+  String details;
+  List<String> images;
 
-  PenguinModel(
-    this.id,
-    this.name,
-    this.height,
-    this.weight,
-    this.distribution,
-    this.details,
-    this.images,
-  );
+  PenguinModel({
+    required this.id,
+    required this.penguin,
+    required this.scientificName,
+    required this.height,
+    required this.weight,
+    required this.distribution,
+    required this.details,
+    required this.images,
+  });
+
+  PenguinModel.fromJson(Map<String, dynamic> json)
+    : id = json["id"],
+      penguin = json["penguin"],
+      scientificName = json["scientificName"],
+      height = json["height"],
+      weight = json["weight"],
+      distribution = json["distribution"],
+      details = json["details"],
+      images = json["images"];
 }
 
-void JsonDecode() {
-  final jsonData;
-  jsonData = jsonDecode("lib/data/penguin_kind.json");
-  print(jsonData);
+class ImageLists {
+  List<String> images;
+
+  ImageLists({required this.images});
+  ImageLists.fromJson(List<String> json) : images = json["images"];
 }

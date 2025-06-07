@@ -12,5 +12,19 @@
             "lib/img/ade2.jpg",
             "lib/img/ade3.jpg"
         ]
+    },
+    {
+        "id":1,
+        "penguin":"アデリーペンギン",
+        "scientificName":"Pygoscelis adeliae",
+        "height":65,
+        "weight":5,
+        "distribution":"南極大陸周辺",
+        "details":"目の周りのアイリングが特徴。キレると頭部が角ばる。キャラクターのモデルになることが多くあり、ペンギン詳しくない人でもコウテイペンギンの次くらいに名前が出てくる。",
+        "images":[
+            "lib/img/ade1.jpg",
+            "lib/img/ade2.jpg",
+            "lib/img/ade3.jpg"
+        ]
     }
 ]

@@ -1,4 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:pocket_penguin_dictionary/src/model.dart';
+
+var penguinProfiles = [];
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -9,6 +15,28 @@ class HomeWidget extends StatefulWidget {
 
 class _HomeWidgetState extends State<HomeWidget> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    init();
+  }
+
+  Future<void> init() async {
+    var temp;
+    temp = jsonDecode(
+      await rootBundle.loadString("assets/data/penguin_kind.json"),
+    ).map<PenguinModel>((e) => PenguinModel.fromJson(e)).toList();
+    // print(await rootBundle.loadString("assets/data/penguin_kind.json"));
+    // print("111");
+    setState(() {
+      penguinProfiles = temp;
+      print(penguinProfiles);
+    });
+
+    return;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -16,7 +44,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           child: Text(
             "ポケットペンギン図鑑",
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 25,),
+            style: TextStyle(fontSize: 25),
           ),
         ),
         leading: IconButton(
@@ -43,7 +71,6 @@ class MainContent extends StatelessWidget {
       child: Column(
         children: [
           //contents
-          
         ],
       ),
     );
