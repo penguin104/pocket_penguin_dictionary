@@ -1,10 +1,9 @@
 import 'dart:convert';
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pocket_penguin_dictionary/src/model.dart';
-
-var penguinProfiles = [];
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -14,26 +13,29 @@ class HomeWidget extends StatefulWidget {
 }
 
 class _HomeWidgetState extends State<HomeWidget> {
+  List<PenguinModel> penguinProfiles = [];
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     init();
+    print(penguinProfiles);
   }
 
   Future<void> init() async {
-    var temp;
-    temp = jsonDecode(
+    final jsonData = jsonDecode(
       await rootBundle.loadString("assets/data/penguin_kind.json"),
-    ).map<PenguinModel>((e) => PenguinModel.fromJson(e)).toList();
+    );
+
     // print(await rootBundle.loadString("assets/data/penguin_kind.json"));
     // print("111");
-    setState(() {
-      penguinProfiles = temp;
-      print(penguinProfiles);
-    });
 
-    return;
+    setState(() {
+      penguinProfiles = jsonData
+          .map<PenguinModel>((e) => PenguinModel.fromJson(e))
+          .toList();
+      // print(penguinProfiles[0].images[0]);
+    });
   }
 
   @override

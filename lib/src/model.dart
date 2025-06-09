@@ -4,11 +4,11 @@ class PenguinModel {
   int id;
   String penguin;
   String scientificName;
-  double height;
-  double weight;
+  int height;
+  int weight;
   String distribution;
   String details;
-  List<String> images;
+  List images;
 
   PenguinModel({
     required this.id,
@@ -29,12 +29,12 @@ class PenguinModel {
       weight = json["weight"],
       distribution = json["distribution"],
       details = json["details"],
-      images = json["images"];
+      images = json["images"].toList();
 }
 
 class ImageLists {
   List<String> images;
 
   ImageLists({required this.images});
-  ImageLists.fromJson(List<String> json) : images = json["images"];
+  ImageLists.fromJson(List<String> json) : images = json;
 }
