@@ -22,15 +22,17 @@ class _HomeWidgetState extends State<HomeWidget> {
   var imgControllerCurrent = 0;
   var imgController = PageController(viewportFraction: 1, initialPage: 0);
 
-  Timer? _timer;
+  var penguinIndex = 0;
+
+  Timer? timer;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     init();
-    _timer = Timer.periodic(Duration(seconds: 4), (_timer) {
-      if (imgControllerCurrent < penguinProfiles[0].images.length) {
+    timer = Timer.periodic(Duration(seconds: 4), (timer) {
+      if (imgControllerCurrent < penguinProfiles[penguinIndex].images.length) {
         imgControllerCurrent++;
       } else {
         imgControllerCurrent = 0;
@@ -63,8 +65,11 @@ class _HomeWidgetState extends State<HomeWidget> {
   @override
   Widget build(BuildContext context) {
     final deviceWidth = MediaQuery.of(context).size.width;
-    final deviceheight = MediaQuery.of(context).size.height;
-    double appBarText = deviceWidth * 0.06;
+    final deviceHeight = MediaQuery.of(context).size.height;
+    double appBarText = deviceWidth < deviceHeight
+        ? deviceWidth * 0.06
+        : deviceHeight * 0.06;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -98,22 +103,23 @@ class _HomeWidgetState extends State<HomeWidget> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: deviceheight * 0.01),
+            SizedBox(height: deviceHeight * 0.01),
             SizedBox(
-              height: deviceheight > deviceWidth
-                  ? deviceheight * 0.4
-                  : deviceheight * 0.6,
+              height: deviceHeight > deviceWidth
+                  ? deviceWidth * 0.9
+                  : deviceHeight * 0.6,
               // color: Colors.black,
               child: PageView(
+                padEnds: false,
                 controller: imgController,
                 scrollDirection: Axis.vertical,
-                children: penguinProfiles[0].images
+                children: penguinProfiles[penguinIndex].images
                     .map(
                       (e) => Image.asset(
                         e,
-                        width: deviceheight > deviceWidth
+                        width: deviceHeight > deviceWidth
                             ? deviceWidth * 0.9
-                            : deviceWidth * 0.6,
+                            : deviceHeight * 0.6,
                       ),
                     )
                     .toList(),
@@ -126,23 +132,45 @@ class _HomeWidgetState extends State<HomeWidget> {
                   IconButton(
                     onPressed: () {
                       // 前のペンギンへ
+                      penguinIndex--;
+                      if (0 > penguinIndex) {
+                        penguinIndex = penguinProfiles.length - 1;
+                      }
+                      imgControllerCurrent = 0;
+                      setState(() {
+                        print(penguinIndex);
+                        print(penguinProfiles[penguinIndex].penguin);
+                      });
                     },
                     icon: Icon(Icons.chevron_left),
-                    iconSize: deviceWidth * 0.08,
+                    iconSize: deviceWidth * 0.07,
                   ),
                   Text(
-                    penguinProfiles[0].penguin,
+                    penguinProfiles[penguinIndex].penguin,
                     style: TextStyle(
                       fontFamily: fontFamilyCommon,
-                      fontSize: deviceWidth * 0.09,
+                      fontSize: deviceHeight > deviceWidth
+                          ? deviceHeight * 0.02
+                          : deviceWidth * 0.05,
                     ),
                   ),
                   IconButton(
                     onPressed: () {
                       // 次のペンギンへ
+
+                      if (penguinIndex < penguinProfiles.length - 1) {
+                        penguinIndex++;
+                      } else {
+                        penguinIndex = 0;
+                      }
+                      imgControllerCurrent = 0;
+                      setState(() {
+                        print(penguinIndex);
+                        print(penguinProfiles[penguinIndex].penguin);
+                      });
                     },
                     icon: Icon(Icons.chevron_right),
-                    iconSize: deviceWidth * 0.08,
+                    iconSize: deviceWidth * 0.07,
                   ),
                 ],
               ),

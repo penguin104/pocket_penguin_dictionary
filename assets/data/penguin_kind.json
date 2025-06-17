@@ -14,17 +14,18 @@
         ]
     },
     {
-        "id":1,
-        "penguin":"アデリーペンギン",
-        "scientificName":"Pygoscelis adeliae",
-        "height":65,
-        "weight":5,
+        "id":2,
+        "penguin":"ジェンツーペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
         "distribution":"南極大陸周辺",
-        "details":"目の周りのアイリングが特徴。キレると頭部が角ばる。キャラクターのモデルになることが多くあり、ペンギン詳しくない人でもコウテイペンギンの次くらいに名前が出てくる。",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
         "images":[
-            "assets/img/ade1.jpg",
-            "assets/img/ade2.jpg",
-            "assets/img/ade3.jpg"
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
         ]
     }
 ]
