@@ -1,10 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pocket_penguin_dictionary/src/model.dart';
+
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 List<PenguinModel> penguinProfiles = [];
 String fontFamilyCommon = 'WDXLLubrifontJPN';
@@ -66,8 +69,17 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     final deviceWidth = MediaQuery.of(context).size.width;
     final deviceHeight = MediaQuery.of(context).size.height;
+
+    Map<String, String> contentTitles = {
+      "scienceName": "学名",
+      "hight": "体長",
+      "weight": "重量",
+      "dist": "生息地",
+      "ditail": "解説",
+    };
+
     double appBarText = deviceWidth < deviceHeight
-        ? deviceWidth * 0.06
+        ? deviceWidth * 0.08
         : deviceHeight * 0.06;
 
     return Scaffold(
@@ -93,13 +105,13 @@ class _HomeWidgetState extends State<HomeWidget> {
         foregroundColor: Colors.blue[900],
         toolbarHeight: 100,
       ),
-
       // PageViewの中身
       // 縦方向にその種のペンギンの画像
       // Low
       //  左ボタン
       //  ペンギン名称
       //  右ボタン
+      // 詳細
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -127,17 +139,18 @@ class _HomeWidgetState extends State<HomeWidget> {
             ),
             Container(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   IconButton(
                     onPressed: () {
                       // 前のペンギンへ
-                      penguinIndex--;
-                      if (0 > penguinIndex) {
-                        penguinIndex = penguinProfiles.length - 1;
-                      }
-                      imgControllerCurrent = 0;
+
                       setState(() {
+                        penguinIndex--;
+                        if (0 > penguinIndex) {
+                          penguinIndex = penguinProfiles.length - 1;
+                        }
+                        imgControllerCurrent = 0;
                         print(penguinIndex);
                         print(penguinProfiles[penguinIndex].penguin);
                       });
@@ -150,7 +163,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     style: TextStyle(
                       fontFamily: fontFamilyCommon,
                       fontSize: deviceHeight > deviceWidth
-                          ? deviceHeight * 0.02
+                          ? deviceHeight * 0.04
                           : deviceWidth * 0.05,
                     ),
                   ),
@@ -158,13 +171,13 @@ class _HomeWidgetState extends State<HomeWidget> {
                     onPressed: () {
                       // 次のペンギンへ
 
-                      if (penguinIndex < penguinProfiles.length - 1) {
-                        penguinIndex++;
-                      } else {
-                        penguinIndex = 0;
-                      }
-                      imgControllerCurrent = 0;
                       setState(() {
+                        if (penguinIndex < penguinProfiles.length - 1) {
+                          penguinIndex++;
+                        } else {
+                          penguinIndex = 0;
+                        }
+                        imgControllerCurrent = 0;
                         print(penguinIndex);
                         print(penguinProfiles[penguinIndex].penguin);
                       });
@@ -175,8 +188,71 @@ class _HomeWidgetState extends State<HomeWidget> {
                 ],
               ),
             ),
+            Content(
+              penguinIndex: penguinIndex,
+              title: contentTitles["ditail"].toString(),
+              contentText: penguinProfiles[penguinIndex].details,
+            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Content extends StatefulWidget {
+  int penguinIndex;
+  String title;
+  String contentText;
+
+  Content({
+    super.key,
+    required this.penguinIndex,
+    required this.title,
+    required this.contentText,
+  });
+
+  @override
+  State<Content> createState() => _ContentState();
+}
+
+class _ContentState extends State<Content> {
+  @override
+  Widget build(BuildContext context) {
+    final deviceWidth = MediaQuery.of(context).size.width;
+    final deviceHeight = MediaQuery.of(context).size.height;
+
+    return Container(
+      margin: EdgeInsets.all(30.0),
+      child: Column(
+        children: [
+          Container(
+            width: deviceWidth,
+            child: Text(
+              widget.title,
+              style: TextStyle(
+                fontFamily: fontFamilyCommon,
+                fontSize: deviceHeight * 0.05,
+              ),
+              textAlign: TextAlign.left,
+            ),
+          ),
+
+          // Text(
+          //   widget.contentText,
+          //   style: TextStyle(fontSize: deviceHeight * 0.03),
+          // ),
+          AnimatedTextKit(
+            key: ValueKey<String>(widget.contentText),
+            totalRepeatCount: 1,
+            animatedTexts: [
+              TyperAnimatedText(
+                widget.contentText,
+                textStyle: TextStyle(fontSize: deviceHeight * 0.03),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
