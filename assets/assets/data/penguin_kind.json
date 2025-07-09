@@ -14,8 +14,233 @@
         ]
     },
     {
-        "id":2,
+        "id":1,
         "penguin":"ジェンツーペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":2,
+        "penguin":"ヒゲペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":3,
+        "penguin":"コウテイペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":4,
+        "penguin":"キングペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":5,
+        "penguin":"マカロニペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":6,
+        "penguin":"イワトビペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":7,
+        "penguin":"フィヨルドランドペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":8,
+        "penguin":"スネアーズペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":9,
+        "penguin":"シュレーターペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":10,
+        "penguin":"ロイヤルペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":11,
+        "penguin":"キガシラペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":12,
+        "penguin":"コガタペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":13,
+        "penguin":"フンボルトペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":14,
+        "penguin":"ケープペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":15,
+        "penguin":"マゼランペンギン",
+        "scientificName":"Pygoscelis papua",
+        "height":70,
+        "weight":7,
+        "distribution":"南極大陸周辺",
+        "details": "頭部の白い模様が特徴的。開発者と違い、運動神経が抜群な種類のペンギン。18種類いるペンギンの中で3番目に大きい種類。",
+        "images":[
+            "assets/img/gen1.jpg",
+            "assets/img/gen2.jpg",
+            "assets/img/gen3.jpg",
+            "assets/img/gen4.jpg"
+        ]
+    },
+    {
+        "id":16,
+        "penguin":"ガラパゴスペンギン",
         "scientificName":"Pygoscelis papua",
         "height":70,
         "weight":7,
